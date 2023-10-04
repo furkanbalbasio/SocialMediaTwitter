@@ -23,8 +23,8 @@ public class Comment {
     Long tweetid;
     @Column(length = 140)
     String comment;
-    LocalDate date;
-
+    @Builder.Default
+    private LocalDate date = LocalDate.now();
 
 
 }

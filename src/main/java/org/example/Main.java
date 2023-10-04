@@ -20,7 +20,7 @@ public class Main {
                 case 0: close=true; break;
                 case 1: UserController.registerUser(); break;
                 case 2: UserController.loginUser();
-                menu();
+                secimYap();
                 break;
             }
         }while (!close);
@@ -33,6 +33,33 @@ public class Main {
         System.out.println("1-Uye Ol");
         System.out.println("2-Giris Yap");
         System.out.println("0-Kapat");
+    }
+    private static void secimYapMenu(){
+        System.out.println("*************************************");
+        System.out.println("*********        AKIS       *********");
+        System.out.println("*************************************");
+        System.out.println();
+        System.out.println("1-Tweet Gir");
+        System.out.println("2-Comment Gir ");
+        System.out.println("3-Retweet Et");
+        System.out.println("0-Cikis yap");
+    }
+    private static void secimYap(){
+
+        boolean close=false;
+        do{
+            int secim=0;
+            secimYapMenu();
+            System.out.println("Lutfen seciniz......");
+            secim=new Scanner(System.in).nextInt();
+            switch (secim){
+                case 0: close=true; break;
+                case 1: TweetController.tweetAt(); break;
+                case 2: CommentController.commentAt(); break;
+                case 3: RetweetController.retweetAt(); break;
+            }
+        }while (!close);
+        menu();
     }
     private static void menu(){
         boolean close=false;

@@ -23,7 +23,8 @@ public class Tweet {
     @Column(length = 140)
     String tweet;
     Integer retweetCount;
-    LocalDate date;
+    @Builder.Default
+    private LocalDate date = LocalDate.now();
     @Embedded
     BaseEntity baseEntity;
 }

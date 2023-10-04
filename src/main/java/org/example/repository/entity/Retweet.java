@@ -20,5 +20,5 @@ public class Retweet {
     Long id;
     Long tweetid;
     Long userid;
-    LocalDate date;
-}
+    @Builder.Default
+    private LocalDate date = LocalDate.now();}
